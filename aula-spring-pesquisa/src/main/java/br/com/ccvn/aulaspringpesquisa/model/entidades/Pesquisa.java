@@ -1,5 +1,9 @@
 package br.com.ccvn.aulaspringpesquisa.model.entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -33,6 +37,10 @@ public class Pesquisa {
     @Getter
     @Setter
     private String estadoCivil;
+
+    @Getter
+    @Setter
+    private List<GeneroFilmes>generosFilme = new ArrayList<>();
 
 
     

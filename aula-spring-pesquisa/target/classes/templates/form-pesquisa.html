@@ -59,7 +59,7 @@
       <div class="card text-center">
         <div class="card-header">Cadastro de Pesquisas</div>
         <div class="card-body">
-          <form action="" method="post" th:object="$(pesquisa)">
+          <form th:action="@{/pesquisas}" method="post" th:object="${pesquisa}">
             <div class="row">
               <div class="col-3">
                 <div class="form-outline">
@@ -73,7 +73,7 @@
                   <label class="form-label" for="email">E-MAIL</label>
               </div>
             </div>
-            <div class="row mt-3 mb-5">
+            <div class="row mt-3 mb-3">
               <div class="col-2">
                 <h6>Sexo</h6>
                 
@@ -103,7 +103,7 @@
                 </div>
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="radio" name="estadoCivil" 
-                    id="flexRadioDefault5" value="viúvo(a)" th:field="*{estadoCivil}"/>
+                    id="flexRadioDefault5" value="viuvo(a)" th:field="*{estadoCivil}"/>
                   <label class="form-check-label" for="flexRadioDefault5"> Viúvo(a) </label>
                 </div>
                 <div class="form-check form-check-inline">
@@ -113,6 +113,35 @@
                 </div>
               </div>
             </div>
+              <div class="row mb-3">
+                  <div class="col-4">
+                    <h6>Gêneros preferidos</h6>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).FICCAO}" id="chkFiccao" th:field="*{generosFilme}" />
+                      <label class="form-check-label" for="chkFiccao">Ficção</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).ACAO}" id="chkAcao" th:field="*{generosFilme}"/>
+                      <label class="form-check-label" for="chkAcao">Ação</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).TERROR}" id="chkTerror" th:field="*{generosFilme}" />
+                      <label class="form-check-label" for="chkTerror">Terror</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).ROMANCE}" id="chkRomance" th:field="*{generosFilme}" />
+                      <label class="form-check-label" for="chkRomance">Romance</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).COMEDIA}" id="chkComedia" th:field="*{generosFilme}" />
+                      <label class="form-check-label" for="chkComedia">Comédia</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" th:value="${T(br.com.ccvn.aulaspringpesquisa.model.enums.GeneroFilmes).ANIMACAO}" id="chkAnimacao" th:field="*{generosFilme}"/>
+                      <label class="form-check-label" for="chkAnimacao">Animação</label>
+                    </div>
+                  </div>
+              </div>
               <button type="submit" class="btn btn-success col-2">Salvar</button>
               <button type="reset" class="btn btn-danger col-2">Limpar</button>
           </form>
